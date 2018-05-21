@@ -13,7 +13,7 @@ import { CategoriaDTO } from '../../models/categoria.dto';
 export class CategoriasPage {
 
   itens: CategoriaDTO[];
-  bucketUrl: string = API_CONFIG.bucketBaseUrl;
+  bucketBaseUrl: string = API_CONFIG.bucketBaseUrl;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
