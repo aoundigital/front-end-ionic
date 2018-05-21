@@ -11,33 +11,33 @@ import { NavController, IonicPage, MenuController } from 'ionic-angular';
 })
 export class HomePage {
 
-  creds : CredenciaisDTO = {
+  creds: CredenciaisDTO = {
     email: "",
     senha: ""
   }
 
   constructor(
-    public navCtrl: NavController, 
-    public menu:| MenuController,
+    public navCtrl: NavController,
+    public menu: | MenuController,
     public auth: AuthService) {
   }
 
   ionViewWillEnter() {
     this.menu.swipeEnable(false);
-    }
+  }
 
   ionViewDidLeave() {
     this.menu.swipeEnable(true);
-    }
+  }
 
-  login(){
+  login() {
     this.auth.autenticate(this.creds)
       .subscribe(response => {
         this.auth.successfulLogin(response.headers.get('Authorization'));
         this.navCtrl.setRoot('CategoriasPage');
       },
-      error => {}
-    );   
+        error => { }
+      );
   }
 
 }
