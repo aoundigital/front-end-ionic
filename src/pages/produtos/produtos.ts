@@ -38,4 +38,8 @@ export class ProdutosPage {
     }
   }
 
+  showDetail(){
+    this.navCtrl.push('ProdutoDetailPage');// passando o codigo da categoria para a página de produtos
+  }
+
 }
