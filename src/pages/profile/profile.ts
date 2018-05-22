@@ -29,7 +29,14 @@ export class ProfilePage {
         this.cliente = response;
         this.getImageIfExists();
       },
-      error => {});
+      error => {
+        if(error.status == 403){
+          this.navCtrl.setRoot('HomePage'); //se o erro for 403 ir para Home.
+        }
+      });
+    }
+    else{
+      this.navCtrl.setRoot('HomePage'); // se tiver problema com o usuário ir para Home.
     }
   }
 
